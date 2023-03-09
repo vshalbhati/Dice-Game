@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div class="game">
+      <h1>Dice Game</h1>
+      <div class="rounds">
+        <p>Number of rounds:</p>
+        <input type="number" id="numRounds" min="1" max="10" value="3">
+      </div>
+      <button id="playButton">Play</button>
+      <div class="results">
+        <h2>Results</h2>
+        <p><span id="player1Name"></span>: <span id="player1Score"></span></p>
+        <p><span id="player2Name"></span>: <span id="player2Score"></span></p>
+        <p id="winner"></p><br>
+      </div>
+    </div>
+    <script>
+        const numRoundsInput = document.getElementById("numRounds");
+const playButton = document.getElementById("playButton");
+const player1Name = document.getElementById("player1Name");
+const player1Score = document.getElementById("player1Score");
+const player2Name = document.getElementById("player2Name");
+const player2Score = document.getElementById("player2Score");
+const winner = document.getElementById("winner");
+
+const numSides = 6;
+
+const player1 = {
+  name: "Player 1",
+  color: "#4CAF50",
+  score: 0
+};
+
+const player2 = {
+  name: "Player 2",
+  color: "#2196F3",
+  score: 0
+};
+
+function rollDice() {
+  return Math.floor(Math.random() * numSides) + 1;
+}
+
+function playGame(numRounds) {
+  player1.score = 0;
+  player2.score = 0;
+
+  for (let i = 0; i < numRounds; i++) {
+    const player1Roll = rollDice();
+    const player2Roll = rollDice();
+
+    player1.score += player1Roll;
+    player2.score += player2Roll;
+
+    const roundResult = document.createElement("p");
+    roundResult.innerHTML = `Round ${i + 1}: ${player1.name} rolled a ${player1Roll}, ${player2.name} rolled a ${player2Roll}.`;
+    winner.insertAdjacentElement("beforebegin", roundResult);
+  }
+
+  player1Score.innerHTML = player1.score;
+  player2Score.innerHTML = player2.score;
+
+  if (player1.score > player2.score) {
+    winner.innerHTML = `${player1.name} wins!`;
+    winner.style.color = player1.color;
+  } else if (player2.score > player1.score) {
+    winner.innerHTML = `${player2.name} wins!`;
+    winner.style.color = player2.color;
+  } else {
+    winner.innerHTML = "It's a tie!";
+    winner.style.color = "#000";
+  }
+}
+
+playButton.addEventListener("click", () => {
+  const numRounds = parseInt(numRoundsInput.value);
+  playGame(numRounds);
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.game {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.rounds {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+.results p {
+  margin: 5px 0;
+}
+
+.results h2 {
+  margin-bottom: 10px;
+}
+
+#player1Name {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+#player2Name {
+  font-weight: bold;
+  color: #2196F3;
+}
+
+#winner {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  input[type="number"] {
+    width: 50px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  
+  .player {
+    display: inline-block;
+    margin-right: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .player-name {
+    color: #999;
+  }
+  
+  .score {
+    font-size: 3em;
+    margin: 10px 0;
+  }
+  
+  .winner {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .round-result {
+    margin: 10px 0;
+    color: #999;
+    font-size: 0.9em;
+  }
